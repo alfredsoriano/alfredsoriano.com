@@ -8,7 +8,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+          
           <Route index element={<Home />} />
+
+          {/* extra paths not found, e.g. alfredsoriano.com/a1njk3 will be redirected to NotFound.tsx */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
