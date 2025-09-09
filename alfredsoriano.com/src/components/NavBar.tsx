@@ -19,17 +19,17 @@ export const NavBar = () => {
             setIsScrolled(window.scrollY > 1);
         }    
     
-        window.addEventListener("scroll", handleScroll)
+        window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     
     return (
-        <nav className = {cn("flex w-full  z-40 transition-all duration-300",
+        <nav className = {cn("fixed w-full mt-26 z-50 transition-all duration-300",
                                 isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs"
                                 : "py-5")}
         >
             
-            <div className = "container flex items-center">
+            <div className = "container flex items-center justify-between">
                 <a className = "text-xl font-bold text-primary flex items-center" href="#home">
                     <span className = "relative z-10">
                         <span className = "text-glow text-shadow-lg/30 text-primary-foreground"> alfredsoriano</span>
@@ -38,7 +38,7 @@ export const NavBar = () => {
                 </a>
 
                 {/* Desktop NavBar */}
-                <div className = "hidden md:flex items-center space-x-8 ml-auto">
+                <div className = "hidden md:flex items-center space-x-8 mx-auto">
                     {navItems.map((item, key) => (
                         <a key={key} 
                            href={item.href} 
@@ -47,15 +47,15 @@ export const NavBar = () => {
                         </a>
                         
                     ))}
-                </div>
-                <div className = "hidden md:flex items-center ml-4">
-                    <ThemeToggle />
+                    <div className="hidden md:flex items-center">
+                        <ThemeToggle />
+                    </div>
                 </div>
 
                 
                 {/* Mobile NavBar */}
                 <button onClick = {() => setIsMenuOpen((prev) => !prev)}
-                        className = "md:hidden p-2 text-foreground z-50 ml-auto"
+                        className = "md:hidden p-2 text-foreground z-50 mx-auto mr-12"
                         aria-label = {isMenuOpen ? "Close Menu" : "Open Menu"}> 
                     {isMenuOpen ? <X size = {24} /> : <Menu size = {24}/>} 
                 </button>
