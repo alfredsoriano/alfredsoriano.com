@@ -7,8 +7,8 @@ export const AboutSection = () => {
                     About <span className = "text-primary">Me</span>
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    {/* Left Header and Paragraphs */}
+                <div className="grid grid-cols-1 md:grid-cols-2 space-y-4 gap-12 items-center">
+                    {/* Left Header, Paragraphs, and Buttons */}
                     <div className="space-y-6">
                         <h3 className="text-xl font-semibold">New Software Developer from Alaska</h3>
                         <p className="text-muted-foreground">
@@ -22,9 +22,27 @@ export const AboutSection = () => {
                             I'm currently listening to SZA, Sabrina Carpenter, and Ariana Grande. For video games,
                             I've been playing Genshin Impact and Honkai Star Rail.
                         </p>
+
+                        <div className = "flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+                            <a href="#contact" className="cosmic-button">
+                                Contact Me
+                            </a>
+                            <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/50 transition-colors duration-300">
+                                Download Resume
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Right Header and Paragraphs */}
+                    <div className="grid grid-cols-1 gap-6">
+                        <div className="gradient-border p-6 card-hover"></div>
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10"></div>
+                            </div>
+                        <div className="gradient-border p-6 card-hover"></div>
+                        <div className="gradient-border p-6 card-hover"></div>
+                    </div>
+
+                    {/* Right Header and Paragraphs WIP NOT FINAL
                     <div className="space-y-6">
                         <h3 className="text-xl font-semibold">Actively Looking, Constantly Learning</h3>
                             <p className="text-muted-foreground">
@@ -39,6 +57,7 @@ export const AboutSection = () => {
                                 projects.
                             </p>
                     </div>
+                    */}
                 </div>
             </div>
         </section>
